@@ -1,3 +1,5 @@
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
 #include <iostream>
 #include <cmath>
 #include <cstdio>
@@ -42,7 +44,7 @@ double*** Monte_karlo1 (double a, double b, double c, int N)
             Ellips_Koords[count][count_1] = new double [3];
     }
     ofstream fout("data_elips.txt");
-    fout<<"[";
+    //fout<<"[";
     double pi = 3.141592653589793;
     int i = 0;
     while (i <= N)
@@ -54,7 +56,7 @@ double*** Monte_karlo1 (double a, double b, double c, int N)
                ((y > 0 and y < fun_Y(x, z, a, b, c)) or (y < 0 and y > -fun_Y(x, z, a, b, c)))) {
                double gamma = DoubleRand(1, 0);
                double gamma_2 = DoubleRand(1, 0);
-               cout << gamma << "\t" << gamma_2 << endl;
+      //         cout << gamma << "\t" << gamma_2 << endl;
                if (abs(x + Probeg(gamma) * sin(pi * gamma) * cos(2 * pi * gamma_2)) < b
                    and abs(y + Probeg(gamma) * sin(pi * gamma) * sin(2 * pi * gamma_2)) < a
                    and z + Probeg(gamma) * cos(pi * gamma) > 0) {
@@ -66,29 +68,29 @@ double*** Monte_karlo1 (double a, double b, double c, int N)
                    Ellips_Koords[i][1][1] =
                            Ellips_Koords[i][0][1] + Probeg(gamma) * sin(pi * gamma) * sin(2 * pi * gamma_2);
                    Ellips_Koords[i][1][2] = Ellips_Koords[i][0][2] + Probeg(gamma) * cos(pi * gamma);
-                   fout << "[";
+      //             fout << "[";
                    for (int k = 0; k < 2; k++) {
-                       fout << "[";
+                       //fout << "[";
                        for (int j = 0; j < 3; j++) {
                            fout << Ellips_Koords[i][k][j];
-                           if (j != 2)
-                               fout << ", ";
+                         //  if (j != 2)
+                               fout << " ";
 
                        }
                        //if (k!=1)
                        //                        fout<<",";
-                       fout << "]";
-                       if (k != 1)
-                           fout << ", ";
+                       //fout << "]";
+                       //if (k != 1)
+                       //    fout << ", ";
                    }
-                   fout << "]";
-                   if (i != N)
-                       fout << ", ";
+//                   fout << "]";
+  //                 if (i != N)
+    //                   fout << ", ";
                    i = i + 1;
                }
            }
     }
-    fout<<"]";
+    //fout<<"]";
     fout.close(); // закрытие файла
     return Ellips_Koords;
 }
