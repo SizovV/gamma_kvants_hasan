@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/University/8Semestr/CalculationPhys/FirstWork/main.cpp
+iostream
+-
+cmath
+-
+cstdio
+-
+cstdlib
+-
+fstream
+-
+ctime
+-
+iomanip
+-
+
