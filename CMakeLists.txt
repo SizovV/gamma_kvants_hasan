@@ -3,4 +3,5 @@ project(FirstWork)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(FirstWork main.cpp)
+add_executable(FirstWork
+        main.cpp)

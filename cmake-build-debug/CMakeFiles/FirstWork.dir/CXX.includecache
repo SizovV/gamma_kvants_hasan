@@ -11,14 +11,14 @@ iostream
 -
 cmath
 -
-cstdio
--
 cstdlib
 -
 fstream
 -
+vector
+-
 ctime
 -
-iomanip
+random
 -
 
